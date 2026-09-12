@@ -1,0 +1,27 @@
+syntax = "proto3";
+package productos;
+
+import "google/protobuf/empty.proto";
+
+message Producto {
+  string id = 1;
+  string nombre = 2;
+  string descripcion = 3;
+  double precio = 4;
+}
+
+message ProductId {
+  string id = 1;
+}
+
+message ProductoList {
+  repeated Producto items = 1;
+}
+
+service ProductoService {
+  rpc Create (Producto) returns (Producto);
+  rpc Get (ProductId) returns (Producto);
+  rpc Update (Producto) returns (Producto);
+  rpc Delete (ProductId) returns (Producto);
+  rpc List (google.protobuf.Empty) returns (ProductoList);
+}
