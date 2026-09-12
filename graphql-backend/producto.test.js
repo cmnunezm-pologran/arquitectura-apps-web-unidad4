@@ -20,7 +20,7 @@ describe('Pruebas Completas CRUD del API GraphQL', () => {
   test('1. Debe CREAR un producto', async () => {
     const query = `
       mutation {
-        crearProducto(nombre: "Teclado Test", descripcion: "Mecánico", precio: 100.5) {
+        crearProducto(nombre: "Dron DJI Mavic 3", descripcion: "Cámara Hasselblad 5.1K, 46 min vuelo", precio: 2199.99) {
           id
           nombre
         }
@@ -45,7 +45,7 @@ describe('Pruebas Completas CRUD del API GraphQL', () => {
     const query = `{ obtenerProducto(id: "${productoId}") { nombre } }`;
     const respuesta = await request(app).post('/graphql').send({ query });
     expect(respuesta.statusCode).toBe(200);
-    expect(respuesta.body.data.obtenerProducto.nombre).toBe('Teclado Test');
+    expect(respuesta.body.data.obtenerProducto.nombre).toBe('Dron DJI Mavic 3');
   });
 
   test('4. Debe ACTUALIZAR el precio del producto', async () => {
