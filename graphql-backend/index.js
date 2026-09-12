@@ -13,9 +13,17 @@ async function startServer() {
   await sequelize.sync({ force: false });
   console.log('Base de datos sincronizada');
 
-  app.listen(4000, () => {
-    console.log(`Servidor GraphQL listo en http://localhost:4000${server.graphqlPath}`);
-  });
+  if (process.env.NODE_ENV !== 'test') {
+      app.listen(4000, () => {
+        console.log(`Servidor GraphQL listo en http://localhost:4000${server.graphqlPath}`);
+      });
+    }
+    
+    return app;
 }
 
-startServer();
+if (process.env.NODE_ENV !== 'test') {
+  startServer();
+}
+
+module.exports = startServer;
