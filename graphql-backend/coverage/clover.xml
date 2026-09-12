@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1789230191758" clover="3.2.0">
-  <project timestamp="1789230191758" name="All files">
+<coverage generated="1789243420321" clover="3.2.0">
+  <project timestamp="1789243420321" name="All files">
     <metrics statements="51" coveredstatements="44" conditionals="10" coveredconditionals="6" methods="7" coveredmethods="6" elements="68" coveredelements="56" complexity="0" loc="51" ncloc="51" packages="4" files="5" classes="5"/>
     <package name="graphql-backend">
       <metrics statements="18" coveredstatements="15" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
